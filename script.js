@@ -5,6 +5,14 @@ hamburger.addEventListener("click", () => {
   navVertical.classList.toggle("show"); // Affiche ou cache le menu vertical
 });
 
+// Fermer le menu si un lien est cliqué
+const navLinks = document.querySelectorAll("#nav-vertical ul li a");
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    navVertical.classList.remove("show");
+  });
+});
+
 // Afficher/Masquer le bouton en fonction du défilement
 window.addEventListener("scroll", () => {
   const scrollTopButton = document.getElementById("scroll-top");

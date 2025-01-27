@@ -125,15 +125,16 @@ header nav ul li a:hover {
 #nav-vertical {
   position: fixed;
   top: 0;
-  left: -250px; /* Caché à gauche par défaut */
-  width: 250px;
+  left: -100%; /* Cache le menu hors écran */
+  /width: 250px;
   height: 100vh;
   background: var(--primary-color);
   color: var(--text-light);
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
   transition: left 0.3s ease;
-  display: none; /* Caché par défaut */
+  display: flex;
+  flex-direction: column;
   z-index: 1000;
 }
 
