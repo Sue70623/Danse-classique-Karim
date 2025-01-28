@@ -197,6 +197,8 @@ header nav ul li a:hover {
   background: var(--background-light);
   background-image: url("https://i.postimg.cc/fTmFFb8X/Karim-dance.jpg");
   background-size: cover;
+  background-repeat: no-repeat; /* Empêche la duplication */
+  background-position: center center; /* Centre bien l'image *
   height: 100vh; /* La section occupe toute la hauteur visible de l'écran */
   display: flex; /* Active Flexbox pour centrer le contenu */
   flex-direction: column; /* Organise les éléments en colonne */
