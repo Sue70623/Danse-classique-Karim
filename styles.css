@@ -194,7 +194,6 @@ header nav ul li a:hover {
 
 /* Section : Accueil */
 #home {
-  background: var(--background-light);
   background-image: url("https://i.postimg.cc/fTmFFb8X/Karim-dance.jpg");
   background-size: cover;
   background-repeat: no-repeat; /* Empêche la duplication */
