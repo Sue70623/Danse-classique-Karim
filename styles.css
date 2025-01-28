@@ -125,14 +125,14 @@ header nav ul li a:hover {
 #nav-vertical {
   position: fixed;
   top: 0;
-  left: -100%; /* Cache le menu hors écran */
-  /width: 250px;
+  left: -100%; /* Caché hors écran */
+  width: 250px; /* Correction de l'erreur de syntaxe */
   height: 100vh;
   background: var(--primary-color);
   color: var(--text-light);
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-  transition: left 0.3s ease;
+  transition: left 0.3s ease; /* Animation fluide */
   display: flex;
   flex-direction: column;
   z-index: 1000;
@@ -157,11 +157,11 @@ header nav ul li a:hover {
 /* Lorsque le menu est visible */
 #nav-vertical.show {
   left: 0; /* Fait glisser le menu latéral */
-  display: block;
 }
 
+/* Icône hamburger */
 .hamburger {
-  display: none; /* Caché par défaut */
+  display: flex; /* Correction : Toujours visible sur mobile */
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
@@ -184,14 +184,13 @@ header nav ul li a:hover {
     display: none; /* Cache le menu horizontal */
   }
 
+  /* Correction : On ne doit pas forcer l'affichage du menu ici */
   .hamburger {
-    display: flex; /* Affiche l'icône hamburger */
-  }
-
-  #nav-vertical {
-    display: flex; /* Affiche le menu vertical */
+    display: flex; /* S'assure que l'icône hamburger est bien visible */
   }
 }
+
+
 
 /* Section : Accueil */
 #home {
@@ -205,6 +204,12 @@ header nav ul li a:hover {
   align-items: center; /* Centre horizontalement le contenu */
   text-align: center;
   padding: 50px 20px;
+}
+
+@media (max-width: 768px) {
+  #home {
+    background-size: contain; /* Permet de s'assurer que l'image n'est pas coupée */
+  }
 }
 
 #home h2 {

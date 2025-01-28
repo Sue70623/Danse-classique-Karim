@@ -1,17 +1,37 @@
-const hamburger = document.getElementById("hamburger");
-const navVertical = document.getElementById("nav-vertical");
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const navVertical = document.getElementById("nav-vertical");
 
-hamburger.addEventListener("click", () => {
-  navVertical.classList.toggle("show"); // Affiche ou cache le menu vertical
-});
+  // Vérifier si les éléments existent avant d'ajouter des événements
+  if (!hamburger || !navVertical) {
+    console.error("Élément manquant : vérifiez les IDs du menu hamburger et du menu.");
+    return;
+  }
 
-// Fermer le menu si un lien est cliqué
-const navLinks = document.querySelectorAll("#nav-vertical ul li a");
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    navVertical.classList.remove("show");
+  // Toggle du menu
+  hamburger.addEventListener("click", () => {
+    console.log("Menu hamburger cliqué"); // Debug
+    navVertical.classList.toggle("show");
+  });
+
+  // Fermer le menu si un lien est cliqué
+  const navLinks = document.querySelectorAll("#nav-vertical ul li a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      console.log("Lien cliqué, fermeture du menu"); // Debug
+      navVertical.classList.remove("show");
+    });
+  });
+
+  // Fermer le menu en cliquant ailleurs
+  document.addEventListener("click", (event) => {
+    if (!navVertical.contains(event.target) && !hamburger.contains(event.target)) {
+      console.log("Clic en dehors, fermeture du menu"); // Debug
+      navVertical.classList.remove("show");
+    }
   });
 });
+
 
 // Afficher/Masquer le bouton en fonction du défilement
 window.addEventListener("scroll", () => {
