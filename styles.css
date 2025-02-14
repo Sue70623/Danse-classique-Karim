@@ -161,7 +161,7 @@ header nav ul li a:hover {
 
 /* Icône hamburger */
 .hamburger {
-  display: flex; /* Correction : Toujours visible sur mobile */
+  display: none; /* Correction : Toujours visible sur mobile */
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
